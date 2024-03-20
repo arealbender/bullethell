@@ -70,7 +70,7 @@ class MenuMain {
 
     draw(ctx) {
         // console.log(true);
-        ctx.drawImage(this.background, 513, 256, 388, 768, 0, 0, 388, 768);
+        ctx.drawImage(this.background, 0, 0, 388, 768, 0, 0, 388, 768);
         this.privateDrawAllButton(ctx);
         // this.ctxInfoBoard.drawImage(this.infoBoardBackground, 771, 1, 256, 255, 0, 0, 200, 768);
     }
