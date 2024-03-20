@@ -17,8 +17,8 @@ class Enemy extends Character{
         this.animationState = 0; // 0 means stands still, 1 is moving to the left, 2 is moving to the right.
         // this.lastMouseX = 0;
         // this.lastMouseY = 0;
-        this.enemyFrameWidth = 48*4;
-        this.enemyFrameHeight = 64*4;
+        this.enemyFrameWidth = 48;
+        this.enemyFrameHeight = 64;
         this.frameTime = 0.333;
         this.scaler = 1;
         this.frameCount = 4;
@@ -152,11 +152,7 @@ class Enemy extends Character{
 
     draw(ctx) {
         // this.privateDrawMagicCircle(ctx);
-        if(this.animationState < 4) {
-            this.animation[this.animationState].drawFrame(this.game.clockTick, ctx, this.canvasX+72, this.canvasY+98, 0.25);
-        } else {
-            this.animation[this.animationState].drawFrame(this.game.clockTick, ctx, this.canvasX, this.canvasY, this.scaler);
-        }
+        this.animation[this.animationState].drawFrame(this.game.clockTick, ctx, this.canvasX, this.canvasY, this.scaler);
 
         // Draw HP bar.
         ctx.beginPath()

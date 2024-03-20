@@ -52,7 +52,7 @@ class MenuResult {
 
     draw(ctx) {
         // console.log(true);
-        this.result ? ctx.drawImage(this.background, 256, 257, 256, 255, 0, 0, 388, 768) : ctx.drawImage(this.background, 256, 1, 256, 255, 0, 0, 388, 768);
+        this.result ? ctx.drawImage(this.background, 388, 0, 388, 768, 0, 0, 388, 768) : ctx.drawImage(this.background, 256, 1, 256, 255, 0, 0, 388, 768);
         this.privateDrawButton(ctx);
         // this.ctxInfoBoard.drawImage(this.infoBoardBackground, 771, 1, 256, 255, 0, 0, 200, 768);
     }
@@ -64,7 +64,7 @@ class MenuResult {
 
         this.playAgainButtonCtx.font = "44px Akaya Kanadaka";
         this.result ? this.playAgainButtonCtx.fillStyle = "Orange" : this.playAgainButtonCtx.fillStyle = "White";
-        this.result ? this.playAgainButtonCtx.fillText("You won.", 0, 50) : this.playAgainButtonCtx.fillText("You lost.", 0, 50);
+        // this.result ? this.playAgainButtonCtx.fillText("You won.", 0, 50) : this.playAgainButtonCtx.fillText("You lost.", 0, 50);
         // Button effect.
         if(this.buttonHover) {
             // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/shadowColor
@@ -77,7 +77,7 @@ class MenuResult {
             this.result ? this.playAgainButtonCtx.fillStyle = "Orange" : this.playAgainButtonCtx.fillStyle = "White";
         }
         this.result ? this.playAgainButtonCtx.fillText("Play again?", 0, 100) : this.playAgainButtonCtx.fillText("Try again?", 0, 100); // Origin of fill text is bottom left, not top left.
-        ctx.drawImage(this.playAgainButtonCanvas, this.playAgainButtonAreaX, this.playAgainButtonAreaY);
+        ctx.drawImage(this.playAgainButtonCanvas, this.playAgainButtonAreaX-10, this.playAgainButtonAreaY + 130);
     }
 
     privateCaptureButtonClick(event) {
@@ -87,7 +87,7 @@ class MenuResult {
         let newMouseY = event.clientY - canvasRect.top;
 
         if(newMouseX >= this.playAgainButtonAreaX && newMouseX <= this.playAgainButtonAreaX + 200
-            && newMouseY >= this.playAgainButtonAreaY + 50 && newMouseY <= this.playAgainButtonAreaY + 100) {
+            && newMouseY >= this.playAgainButtonAreaY + 180 && newMouseY <= this.playAgainButtonAreaY + 230) {
             createMainMenu();
         }
     }
@@ -99,7 +99,7 @@ class MenuResult {
         let newMouseY = event.clientY - canvasRect.top;
 
         if(newMouseX >= this.playAgainButtonAreaX && newMouseX <= this.playAgainButtonAreaX + 200
-            && newMouseY >= this.playAgainButtonAreaY + 50 && newMouseY <= this.playAgainButtonAreaY + 100) {
+            && newMouseY >= this.playAgainButtonAreaY + 180 && newMouseY <= this.playAgainButtonAreaY + 230) {
             this.buttonHover = true;
         } else {
             this.buttonHover = false;
