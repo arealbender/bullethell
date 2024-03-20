@@ -1,24 +1,25 @@
-# bullethell
-A bullet hell game in HTML5 and JS, using the p5.js library. You can play it
-[here](https://rsaihe.github.io/bullethell).
+# Bullet Hell
 
-### Arrow Key Controls
-* Arrow keys to move.
-* Z to fire.
-* X to slow down time.
-* C to use a bomb to clear the screen of bullets.
-* P to pause.
+- A browser game of Bullet Hell genre based on Touhou franchise, built on JavaScript.
+- Try out now: https://hunghvu.github.io/bullet-hell/.
 
-### WASD Controls
-* WASD to move.
-* B to fire.
-* N to slow down time.
-* M to use a bomb to clear the screen of bullets.
-* P to pause.
+## Gameplay
 
-#### Debugging controls
-* F to toggle FPS display.
-* G to toggle low graphics settings for slower computers.
-* H to toggle displaying hitboxes.
-* T to toggle black background.
-* Y to toggle rendering stars.
+Hover mouse over canvas to control your player. There will be 3 stages, with each having a different bullet pattern and player buffs based on an enemy's HP. Objective - dodge all the bullets and take down an enemy.
+
+## Screenshot
+
+From left to right, main menu and in-game screen.
+
+![image](https://user-images.githubusercontent.com/62678592/111561066-13401680-8751-11eb-8eb8-b6b34dd3cbad.png)
+
+
+## Credits
+
+1. **Sprite**: ZUN and Team Shanghai Alice
+2. **Audio**: ZUN and Team Shanghai Alice, LittleRobotSoundFactory
+3. **Background images**: Ryan914, Ivana Cajina
+
+## Contributors
+
+Hung Vu
