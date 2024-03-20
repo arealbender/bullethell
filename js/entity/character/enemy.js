@@ -17,8 +17,8 @@ class Enemy extends Character{
         this.animationState = 0; // 0 means stands still, 1 is moving to the left, 2 is moving to the right.
         // this.lastMouseX = 0;
         // this.lastMouseY = 0;
-        this.enemyFrameWidth = 48;
-        this.enemyFrameHeight = 64;
+        this.enemyFrameWidth = 48*4;
+        this.enemyFrameHeight = 64*4;
         this.frameTime = 0.333;
         this.scaler = 1;
         this.frameCount = 4;
@@ -61,9 +61,9 @@ class Enemy extends Character{
 
     loadAnimations() {
 
-        let enemyStill = new Animator(this.enemySheet, 412, 388, this.enemyFrameWidth, this.enemyFrameHeight, this.frameCount, this.frameTime, 0, false, true);
-        let enemyLeft = new Animator(this.enemySheet, 412, 452, this.enemyFrameWidth, this.enemyFrameHeight, this.frameCount, this.frameTime, 0, false, true);
-        let enemyRight = new Animator(this.enemySheet, 412, 516, this.enemyFrameWidth, this.enemyFrameHeight, this.frameCount, this.frameTime, 0, false, true);
+        let enemyStill = new Animator(this.enemySheet, 412, 388, this.enemyFrameWidth, this.enemyFrameHeight, 1, this.frameTime, 0, false, true);
+        let enemyLeft = new Animator(this.enemySheet, 412, 388, this.enemyFrameWidth, this.enemyFrameHeight, 1, this.frameTime, 0, false, true);
+        let enemyRight = new Animator(this.enemySheet, 412, 388, this.enemyFrameWidth, this.enemyFrameHeight, 1, this.frameTime, 0, false, true);
         this.animation.push(enemyStill);
         this.animation.push(enemyLeft);
         this.animation.push(enemyRight);
@@ -152,7 +152,11 @@ class Enemy extends Character{
 
     draw(ctx) {
         // this.privateDrawMagicCircle(ctx);
-        this.animation[this.animationState].drawFrame(this.game.clockTick, ctx, this.canvasX, this.canvasY, this.scaler);
+        if(this.animationState < 4) {
+            this.animation[this.animationState].drawFrame(this.game.clockTick, ctx, this.canvasX+72, this.canvasY+98, 0.25);
+        } else {
+            this.animation[this.animationState].drawFrame(this.game.clockTick, ctx, this.canvasX, this.canvasY, this.scaler);
+        }
 
         // Draw HP bar.
         ctx.beginPath()

@@ -55,8 +55,8 @@ class MenuMain {
         // this.normalButtonAreaX = canvas.width / 12 * 5;
         // this.normalButtonAreaY = canvas.height / 5 * 2.5 + 25; // Origin of fill text is bottom left, not top left (?)
 
-        this.hardButtonAreaX = canvas.width / 12 * 4;
-        this.hardButtonAreaY = canvas.height / 5 * 2.5 + 100; // Origin of fill text is bottom left, not top left (?)
+        this.hardButtonAreaX = canvas.width / 12 * 3.5;
+        this.hardButtonAreaY = 160; // Origin of fill text is bottom left, not top left (?)
 
         // this.lunaticButtonAreaX = canvas.width / 12 * 5;
         // this.lunaticButtonAreaY = canvas.height / 5 * 2.5 + 175; // Origin of fill text is bottom left, not top left (?)
@@ -81,7 +81,7 @@ class MenuMain {
         // this.privateDrawSpecificButton(this.normalButtonCanvas, this.normalButtonCtx, this.normalButtonHover, 
         //     this.normalButtonAreaX, this.normalButtonAreaY, ctx, "Normal");
         this.privateDrawSpecificButton(this.hardButtonCanvas, this.hardButtonCtx, this.hardButtonHover, 
-            this.hardButtonAreaX, this.hardButtonAreaY, ctx, "LEGGOOO");
+            this.hardButtonAreaX, this.hardButtonAreaY, ctx, "Start Game!");
         // this.privateDrawSpecificButton(this.lunaticButtonCanvas, this.lunaticButtonCtx, this.lunaticButtonHover, 
         //     this.lunaticButtonAreaX, this.lunaticButtonAreaY, ctx, "Lunatic");
     }
@@ -121,7 +121,7 @@ class MenuMain {
         //     startGame(7, 0.85, 450, 700);
         // }
 
-        if (newMouseX >= this.hardButtonAreaX && newMouseX <= this.hardButtonAreaX + 100
+        if (newMouseX >= this.hardButtonAreaX && newMouseX <= this.hardButtonAreaX + 150
             && newMouseY >= this.hardButtonAreaY && newMouseY <= this.hardButtonAreaY + 50) {
             startGame(6, 0.8, 400, 900);
         }
